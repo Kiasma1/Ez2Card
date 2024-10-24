@@ -20,8 +20,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TextHuman | 汉语新解&编辑",
-  description: "通过对汉语进行全新的解释",
+  title: "Ez2Card",
+  description: "Ez2Card",
 };
 
 export default function RootLayout({

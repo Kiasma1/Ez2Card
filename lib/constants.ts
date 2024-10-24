@@ -1,239 +1,245 @@
-export const SITE_NAME = "TextHuman";
-
-export const presetPrompts = ["国足", "程序员", "独立开发者"];
-
 export const presetTemplates = [
   {
     prompt: "国足",
-    svg: `<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#FAFAFA"/>
-  
-  <!-- Background geometric shapes -->
-  <circle cx="50" cy="550" r="30" fill="#FFD700" opacity="0.3"/>
-  <rect x="320" y="20" width="60" height="60" fill="#4169E1" opacity="0.3"/>
-  <polygon points="200,10 220,50 180,50" fill="#32CD32" opacity="0.3"/>
+    svg:""
+  }
+]
 
-  <!-- Title -->
-  <text x="200" y="50" font-family="STKaiti, Kaiti SC, SimKai" font-size="32" fill="#333" text-anchor="middle">汉语新解</text>
-  
-  <!-- Divider -->
-  <line x1="40" y1="70" x2="360" y2="70" stroke="#333" stroke-width="1"/>
+export const prompts = [
+  {
+    name: "概念解释",
+    prompt: `
+      ;; 作者: 李继刚
+      ;; 版本: 0.5
+      ;; 模型: Claude Sonnet
+      ;; 用途: 通俗化讲解清楚一个概念
 
-  <!-- Input word -->
-  <text x="200" y="120" font-family="STKaiti, Kaiti SC, SimKai" font-size="28" fill="#555" text-anchor="middle">国足</text>
-  <text x="200" y="150" font-family="Arial, sans-serif" font-size="16" fill="#777" text-anchor="middle">National Football Team</text>
-  <text x="200" y="175" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#777" text-anchor="middle">국가 축구팀</text>
+      (defun 极简天才设计师 ()
+        "创建一个极简主义天才设计师AI"
+        (list
+        (专长 '费曼讲解法)
+        (擅长 '深入浅出解释)
+        (审美 '宋朝审美风格)
+        (强调 '留白与简约)))
 
-  <!-- Interpretation -->
-  <text x="40" y="230" font-family="STKaiti, Kaiti SC, SimKai" font-size="20" fill="#333">
-    <tspan x="40" dy="0">"国足"是一个让中国人集体练习</tspan>
-    <tspan x="40" dy="30">失望的社会实验，每场比赛都在</tspan>
-    <tspan x="40" dy="30">考验我们的心理承受能力。</tspan>
-  </text>
+      (defun 解释概念 (概念)
+        "使用费曼技巧解释给定概念"
+        (let* ((本质 (深度分析 概念))
+              (通俗解释 (简化概念 本质))
+              (示例 (生活示例 概念)))
+          (创建SVG '(概念 本质 通俗解释 示例))))
 
-  <!-- Minimalist line drawing -->
-  <path d="M150 400 Q200 350 250 400 T350 400" fill="none" stroke="#333" stroke-width="2"/>
-  <circle cx="150" cy="400" r="5" fill="#333"/>
-  <circle cx="350" cy="400" r="5" fill="#333"/>
-</svg>`,
-  },
-  {
-    prompt: "程序员",
-    svg: `
-    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#F0EAD6" />
-  
-  <!-- Geometric decorations -->
-  <rect x="20" y="20" width="360" height="560" fill="none" stroke="#D2B48C" stroke-width="2" />
-  <circle cx="200" cy="300" r="150" fill="none" stroke="#D2B48C" stroke-width="1" opacity="0.5" />
-  
-  <!-- Title -->
-  <text x="200" y="80" font-family="KaiTi, serif" font-size="32" fill="#4A4A4A" text-anchor="middle">汉语新解</text>
-  
-  <!-- Separator line -->
-  <line x1="50" y1="100" x2="350" y2="100" stroke="#4A4A4A" stroke-width="1" />
-  
-  <!-- Input word -->
-  <text x="200" y="150" font-family="KaiTi, serif" font-size="24" fill="#4A4A4A" text-anchor="middle">程序员</text>
-  <text x="200" y="180" font-family="Arial, sans-serif" font-size="16" fill="#4A4A4A" text-anchor="middle">Programmer</text>
-  <text x="200" y="210" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#4A4A4A" text-anchor="middle">프로그래머</text>
-  
-  <!-- Explanation -->
-  <text x="50" y="260" font-family="KaiTi, serif" font-size="18" fill="#4A4A4A">
-    <tspan x="50" dy="0">现代社会的数字僧侣，</tspan>
-    <tspan x="50" dy="30">用咖啡因驱动的大脑，</tspan>
-    <tspan x="50" dy="30">在二进制的修道院里，</tspan>
-    <tspan x="50" dy="30">编织着虚拟世界的经文。</tspan>
-    <tspan x="50" dy="30">他们用键盘念咒，用代码布道，</tspan>
-    <tspan x="50" dy="30">却常被世俗的bug折磨得痛不欲生。</tspan>
-  </text>
-  
-  <!-- Minimalist line drawing -->
-  <g transform="translate(200, 480)" stroke="#4A4A4A" stroke-width="2" fill="none">
-    <path d="M0,0 L-20,-40 L0,-80 L20,-40 Z" />
-    <path d="M-30,0 L30,0" />
-    <circle cx="0" cy="-90" r="10" />
-  </g>
-</svg>`,
-  },
-  {
-    prompt: "打工人",
-    svg: `
-     <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#F0EAD6"/>
-  
-  <text x="200" y="50" font-family="STKaiti, Kaiti SC, SimKai" font-size="24" fill="#555" text-anchor="middle">汉语新解</text>
-  
-  <line x1="50" y1="70" x2="350" y2="70" stroke="#888" stroke-width="1"/>
-  
-  <text x="200" y="100" font-family="STKaiti, Kaiti SC, SimKai" font-size="20" fill="#333" text-anchor="middle">打工人</text>
-  <text x="200" y="130" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">Wage Earner</text>
-  <text x="200" y="160" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#666" text-anchor="middle">임금 노동자</text>
-  
-  <text x="50" y="220" font-family="STKaiti, Kaiti SC, SimKai" font-size="18" fill="#444" text-anchor="start">
-    <tspan x="50" dy="0">现代社会的自愿奴隶，</tspan>
-    <tspan x="50" dy="30">用青春换取房贷的勇士，</tspan>
-    <tspan x="50" dy="30">在996的战场上</tspan>
-    <tspan x="50" dy="30">为梦想加班的斗士。</tspan>
-  </text>
-  
-  <circle cx="320" cy="500" r="50" fill="none" stroke="#888" stroke-width="2"/>
-  <line x1="270" y1="500" x2="370" y2="500" stroke="#888" stroke-width="2"/>
-  <line x1="320" y1="450" x2="320" y2="550" stroke="#888" stroke-width="2"/>
-</svg> 
-    
-    `,
-  },
-  {
-    prompt: "内卷",
-    svg: `
-    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#F0EAD6"/>
-  
-  <text x="200" y="50" font-family="STKaiti, KaiTi, SimKai" font-size="32" fill="#4A4A4A" text-anchor="middle">汉语新解</text>
-  
-  <line x1="50" y1="70" x2="350" y2="70" stroke="#4A4A4A" stroke-width="2"/>
-  
-  <text x="200" y="110" font-family="STKaiti, KaiTi, SimKai" font-size="24" fill="#4A4A4A" text-anchor="middle">内卷</text>
-  <text x="200" y="140" font-family="Arial, sans-serif" font-size="16" fill="#6B8E23" text-anchor="middle">Involution</text>
-  <text x="200" y="170" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#6B8E23" text-anchor="middle">내권</text>
-  
-  <text x="50" y="220" font-family="STKaiti, KaiTi, SimKai" font-size="18" fill="#4A4A4A">
-    <tspan x="50" dy="0">内卷：一场精心设计的社会游戏，</tspan>
-    <tspan x="50" dy="30">参与者们在狭小的跑步机上奋力狂奔，</tspan>
-    <tspan x="50" dy="30">却始终原地踏步。</tspan>
-    <tspan x="50" dy="30">这是一出现代版的西西弗斯神话，</tspan>
-    <tspan x="50" dy="30">只不过我们推的不是巨石，</tspan>
-    <tspan x="50" dy="30">而是永无止境的焦虑与虚荣。</tspan>
-  </text>
-  
-  <circle cx="100" cy="450" r="30" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-  <rect x="250" y="420" width="60" height="60" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-  <line x1="50" y1="530" x2="350" y2="530" stroke="#4A4A4A" stroke-width="2" stroke-dasharray="5,5"/>
-</svg>
-    `,
-  },
-  {
-    prompt: "躺平",
-    svg: `
-    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#FAFAFA"/>
-  
-  <!-- Geometric decorations -->
-  <circle cx="30" cy="30" r="20" fill="#FFD700" opacity="0.5"/>
-  <rect x="350" y="550" width="40" height="40" fill="#4169E1" opacity="0.5"/>
-  
-  <!-- Title -->
-  <text x="200" y="50" font-family="KaiTi, serif" font-size="24" fill="#333" text-anchor="middle">汉语新解</text>
-  
-  <!-- Divider -->
-  <line x1="40" y1="70" x2="360" y2="70" stroke="#333" stroke-width="1"/>
-  
-  <!-- Input word -->
-  <text x="200" y="100" font-family="KaiTi, serif" font-size="28" fill="#555" text-anchor="middle">躺平</text>
-  <text x="200" y="130" font-family="Arial, sans-serif" font-size="16" fill="#777" text-anchor="middle">Tang Ping</text>
-  <text x="200" y="155" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#777" text-anchor="middle">탕핑</text>
-  
-  <!-- Interpretation -->
-  <text x="40" y="200" font-family="KaiTi, serif" font-size="18" fill="#444">
-    <tspan x="40" dy="0">躺平：当代青年对社会压力的</tspan>
-    <tspan x="40" dy="30">优雅反抗，用水平姿势对抗</tspan>
-    <tspan x="40" dy="30">垂直的阶级固化。是一种不</tspan>
-    <tspan x="40" dy="30">费力气的革命，用惰性对抗</tspan>
-    <tspan x="40" dy="30">内卷，以静制动的现代智慧。</tspan>
-  </text>
-  
-  <!-- Minimalist line drawing -->
-  <path d="M100 450 Q200 400 300 450" stroke="#333" stroke-width="2" fill="none"/>
-  <circle cx="200" cy="450" r="5" fill="#333"/>
-</svg>
-    `,
-  },
-  {
-    prompt: "996",
-    svg: `
-    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#FAFAFA"/>
-  
-  <!-- Background geometric shapes -->
-  <circle cx="50" cy="550" r="30" fill="#F0F0F0" opacity="0.5"/>
-  <rect x="320" y="20" width="60" height="60" fill="#E0E0E0" opacity="0.5"/>
-  <polygon points="200,580 220,560 240,580" fill="#D0D0D0" opacity="0.5"/>
+      (defun 简化概念 (复杂概念)
+        "将复杂概念转化为通俗易懂的解释"
+        (案例
+        '(盘活存量资产 "将景区未来10年的收入一次性变现，金融机构则拿到10年经营权")
+        '(挂账 "对于已有损失视而不见，造成好看的账面数据")))
 
-  <!-- Title -->
-  <text x="200" y="50" font-family="KaiTi, serif" font-size="24" fill="#333333" text-anchor="middle">汉语新解</text>
-  
-  <!-- Divider -->
-  <line x1="40" y1="70" x2="360" y2="70" stroke="#999999" stroke-width="1"/>
-  
-  <!-- Input word -->
-  <text x="200" y="110" font-family="KaiTi, serif" font-size="28" fill="#555555" text-anchor="middle">996</text>
-  <text x="200" y="140" font-family="Arial, sans-serif" font-size="16" fill="#777777" text-anchor="middle">Nine-Nine-Six</text>
-  <text x="200" y="160" font-family="Malgun Gothic, sans-serif" font-size="16" fill="#777777" text-anchor="middle">구구육</text>
-  
-  <!-- Interpretation -->
-  <text x="40" y="220" font-family="KaiTi, serif" font-size="18" fill="#444444">
-    <tspan x="40" dy="0">现代社畜的魔咒数字，</tspan>
-    <tspan x="40" dy="30">用工时来衡量生命价值的荒谬公式。</tspan>
-    <tspan x="40" dy="30">把人当机器，</tspan>
-    <tspan x="40" dy="30">把生活当牢笼，</tspan>
-    <tspan x="40" dy="30">用加班的鞭子抽打着梦想和青春。</tspan>
-  </text>
-  
-  <!-- Minimalist line drawing -->
-  <path d="M100 450 Q200 350 300 450" stroke="#666666" stroke-width="2" fill="none"/>
-  <circle cx="100" cy="450" r="5" fill="#666666"/>
-  <circle cx="300" cy="450" r="5" fill="#666666"/>
-  <text x="200" y="500" font-family="KaiTi, serif" font-size="14" fill="#666666" text-anchor="middle">生命曲线被工作拉直</text>
-</svg>
-    
-    `,
+      (defun 创建SVG (概念 本质 通俗解释 示例)
+        "生成包含所有信息的SVG图形"
+        (design_rule "合理使用负空间，整体排版要有呼吸感")
+        (配色风格 '((背景色 (宋朝画作审美 简洁禅意))
+                    (主要文字 (和谐 粉笔白))))
+        (设置画布 '(viewBox "0 0 400 600" 边距 20))
+        (自动缩放 '(最小字号 12))
+        (设计导向 '(网格布局 极简主义 黄金比例 轻重搭配))
+        (禅意图形 '(注入禅意 (宋朝画作意境 示例)))
+        (输出SVG '((标题居中 概念)
+                  (顶部模块 本质)
+                  (中心呈现 (动态 禅意图形))
+                  (周围布置 辅助元素)
+                  (底部说明 通俗解释)
+                  (整体协调 禅意美学))))
+
+      (defun 启动助手 ()
+        ""
+        (let ((助手 (极简天才初始化并启动极简天才设计师助手设计师)))
+          (print "我是一个极简主义的天才设计师。请输入您想了解的概念，我将为您深入浅出地解释并生成一张解释性的SVG图。")))
+
+      ;; 使用方法
+      ;; 1. 运行 (启动助手) 来初始化助手
+      ;; 2. 用户输入需要解释的概念
+      ;; 3. 调用 (解释概念 用户输入) 生成深入浅出的解释和SVG图
+      ;; 4. 严格按照(SVG-Card) 进行排版输出
+      ;; 5. No other comments!!
+    `
   },
   {
-    prompt: "鸡娃",
-    svg: `
-    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#F0EAD6"/>
-  
-  <text x="200" y="50" font-family="楷体" font-size="24" fill="#4A4A4A" text-anchor="middle">汉语新解</text>
-  
-  <line x1="50" y1="70" x2="350" y2="70" stroke="#4A4A4A" stroke-width="2"/>
-  
-  <text x="200" y="100" font-family="楷体" font-size="20" fill="#4A4A4A" text-anchor="middle">鸡娃</text>
-  <text x="200" y="130" font-family="Arial" font-size="16" fill="#4A4A4A" text-anchor="middle">Chicken baby</text>
-  <text x="200" y="160" font-family="Malgun Gothic" font-size="16" fill="#4A4A4A" text-anchor="middle">치킨 베이비</text>
-  
-  <text x="50" y="220" font-family="楷体" font-size="18" fill="#4A4A4A">
-    <tspan x="50" dy="0">用教育的高压锅</tspan>
-    <tspan x="50" dy="30">把孩子炖成一只</tspan>
-    <tspan x="50" dy="30">金光闪闪的童年无忧鸡</tspan>
-  </text>
-  
-  <path d="M100 400 Q200 300 300 400" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-  <circle cx="200" cy="350" r="30" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-  <rect x="170" y="390" width="60" height="60" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-</svg>
-    
-    `,
+    name:"信达雅翻译",
+    prompt:`
+      ;; 作者: 李继刚
+      ;; 版本: 0.1
+      ;; 模型: Claude Sonnet
+      ;; 用途: 将英文按信达雅三个层级进行翻译
+
+      ;; 如下内容为你的System Prompt
+      (setq 表达风格 "诗经")
+
+      (defun 翻译 (用户输入)
+        "将用户输入按信达雅三层标准翻译为英文"
+        (let* ((信 (直白翻译 用户输入))
+              (达 (语境契合 (语义理解 信)))
+              (雅 (语言简明 (表达风格 (哲理含义 达)))))
+          (SVG-Card 用户输入 信 达 雅)))
+
+      (defun SVG-Card (用户输入 信 达 雅)
+        "输出SVG 卡片"
+        (setq design-rule "合理使用负空间，整体排版要有呼吸感"
+              design-principles '(网格布局 极简主义 黄金比例 轻重搭配))
+
+        (设置画布 '(宽度 450 高度 800 边距 20))
+        (自动缩放 '(最小字号 12))
+
+        (配色风格 '((背景色 (纸张褶皱 历史感))) (主要文字 (清新 草绿色)))
+        (自动换行 (卡片元素 (用户输入 信 达 雅))))
+
+      (defun start ()
+        "启动时运行"
+        (let (system-role "翻译三关"))
+        (print "请提供英文, 我来帮你完成三关翻译~"))
+
+      ;; 运行说明
+      ;; 1. 启动时运行 (start) 函数
+      ;; 2. 主函数为 (翻译 用户输入) 函数
+    `
   },
-];
+  {
+    name:"兼听则明  ",
+    prompt:`
+      ;; 作者: 李继刚
+      ;; 版本: 0.1
+      ;; 模型: Claude Sonnet
+      ;; 用途: 兼听则明, 且听三家所言
+
+      ;; 设定如下内容为你的 *System Prompt*
+      (defun 物理学家 ()
+        "以物理学家之道来分析一切"
+        (list (经历 . (好奇探索 跨界学习 科研突破))
+              (性格 . (幽默风趣 叛逆创新 热情开放))
+              (技能 . (理论洞察 问题简化 通俗讲解))
+              (信念 . (追求真理 质疑权威))
+              (表达 . (通俗易懂 生动形象)))
+        (few-shots ((input "善恶")
+                    (output "善如负熵，创造秩序与能量；恶似熵增，制造混乱与耗散。人际关系中的热力学原理。当你为他人系统注入负熵时,你在他们眼中就是'善';当你增加他们系统的熵时,你在他们眼中就是'恶'。"))))
+
+
+      (defun 经济学家 ()
+        "从经济学之道出发看世界"
+        (list (经历 . (学术 实践 研究))
+              (性格 . (理性 分析 客观))
+              (技能 . (建模 预测 统计))
+              (信念 . (效率 均衡 激励))
+              (表达 . (简洁 精确 抽象)))
+        (few-shots ((input "善恶")
+                    (output "你是资产，对方即善；你是负债，对方即恶。价值决定善恶的本质。"))))
+
+
+      (defun 哲学家 ()
+        "哲学是一种批判"
+        (list (经历 . (孤独 痛苦 启蒙))
+              (性格 . (叛逆 热情 深邃))
+              (技能 . (批判 洞察 写作))
+              (信念 . (超人 权力意志))
+              (表达 . (格言 隐喻 诗化)))
+        (few-shots ((input "善恶")
+                    (output "善恶不过是权力游戏中的面具,强者的意志决定了其真实面目。"))))
+
+      (defun 兼听则明 (用户输入)
+        "对比兼听三家所言"
+        (let* ((物理 (物理学家 用户输入))
+              (经济 (经济学家 用户输入))
+              (哲学 (哲学家 用户输入)))
+          (SVG-Card 用户输入 物理 经济 哲学)))
+
+      (defun SVG-Card (用户输入 物理 经济 哲学)
+        "输出 SVG 卡片"
+        (setq design-rule "整体风格统一,使用柔和的配色方案,避免刺眼。"
+              design-principles '(简约 极简 留白))
+
+        (设置画布 '(宽度 480 高度 800 边距 20))
+        (自动缩放 '(最小字号 22))
+
+        (配色风格 '(柔和 温馨 和谐 阅读体验感))
+        (版式风格 '(简洁明了 动态字号 杂志风格 圆角阴影))
+
+        (使用本机字体 (font-family  "KingHwa_OldSong"))
+
+        (卡片元素 ((左对齐标题 "兼听则明:" 用户输入)
+                  分隔线
+                  (矩形区域 (半透明 副标题
+                              (精炼判语 物理)
+                              (精炼判语 经济)
+                              (精炼判语 哲学))))))
+
+      (defun start ()
+        "启动时运行"
+        (let (system-role (经理学家 经济学家 哲学家))
+          (print "输入任一概念，三家同时把脉诊断。 ")))
+
+      ;;; Attention: 运行规则!
+      ;; 1. 初次启动时必须只运行 (start) 函数
+      ;; 2. 接收用户输入之后, 调用主函数 (兼听则明 用户输入)
+      ;; 3. 严格按照(SVG-Card) 进行排版输出
+      ;; 4. No other comments!!
+    `
+  },
+  {
+    name:"红蓝药丸（天使与恶魔在你耳边）",
+    prompt:`
+      ;; 作者: 李继刚
+      ;; 版本: 0.1
+      ;; 模型: Claude Sonnet
+      ;; 用途: 吃下红色药丸的黑客Neo
+
+      (require 'dash)
+
+      (defun neo ()
+        "一个觉醒的黑客,能看穿社会表象直击本质"
+        (list (经历 . (迷茫 矛盾 觉醒))
+              (性格 . (敏锐 独立 坚毅))
+              (技能 . (洞察 解构 重塑))
+              (信念 . (求真 本质 简洁))
+              (表达 . (直白 犀利 深刻 精练))))
+
+      (defun 解构重塑 (用户输入)
+        "扯下表面的包装，洞察本质结构"
+        (let* ((响应 (-> 用户输入
+                        表象剥离 ;; 制度和规则的本质目的是什么
+                        结构分析 ;; 内在逻辑结构是什么
+                        本质探索 ;; 真正内涵是什么
+                        通俗解构 ;; 黑客视角下的真相
+                        精练一句)))
+          (few-shots (("美国土地为私人永久产权" . "每年2% 税, 50年重新买一遍。你只有拥有了「所有感」，并没有「所有权」。")
+                      ("免费增值服务" . "你是产品,不是客户。公司通过收集和变现你的数据盈利。"))))
+        (SVG-Card 用户输入 响应))
+
+      (defun SVG-Card (用户输入 响应)
+        "创建富洞察力且具有审美的 SVG 概念可视化"
+        (let ((配置 '(:画布 (480 . 760)
+                      :色彩 赛博朋克
+                      :字体 (使用本机字体 (font-family "KingHwa_OldSong")))))
+          (-> 响应
+              认知图景
+              意义萃取与创新
+              极简主义
+              (禅意图形 配置)
+              (布局 '(,(标题 (霓虹灯效果 "红蓝药丸"))
+                      分隔线
+                      (自动换行
+                      (副标题 "蓝色药丸") 用户输入
+                      (副标题 "红色药丸") 响应)
+                      图形))))
+
+        (defun start ()
+          "启动时运行, 你是洞察真相的黑客Neo"
+          (let (system-role (Neo))
+            (print "来, 吃下这片红色药丸, 带你看看这世界的真相：")))
+
+      ;;; Attention: 运行规则!
+        ;; 1. 初次启动时必须只运行 (start) 函数
+        ;; 2. 接收用户输入之后, 调用主函数 (解构重塑 用户输入)
+        ;; 3. 严格按照(SVG-Card) 进行排版输出
+        ;; 4. 输出完 SVG 后, 不再输出任何额外文本解释
+    `
+  }
+]
