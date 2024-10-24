@@ -1,4 +1,3 @@
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const maxDuration = 60;
 import { NextResponse } from "next/server";
@@ -63,7 +62,7 @@ const systemPrompt = `
 `;
 
 // (设置画布 '(宽度 400 高度 600 边距 20))
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   if (!API_URL || !API_KEY) {
     console.error("Missing API_URL or API_KEY environment variables");
     return NextResponse.json(
@@ -72,7 +71,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { prompt } = await req.json();
+  const { prompt } = await request.json();
   if (!prompt) {
     return NextResponse.json(
       { error: "Missing prompt in request body" },
